@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="c4bbe8f6-6f4d-430a-b9f3-d091a8909f94" />
+  <meta>
+    <versionId value="6" />
+    <lastUpdated value="2021-10-05T08:34:09.723+00:00" />
+  </meta>
+  <url value="https://example.org/fhir/StructureDefinition/DodsmeldingPatient" />
+  <name value="DodsmeldingPatient" />
+  <status value="draft" />
+  <date value="2021-10-05T08:34:09.8882667+00:00" />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Patient" />
+  <baseDefinition value="http://hl7.no/fhir/StructureDefinition/no-basis-Patient" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Patient.identifier">
+      <path value="Patient.identifier" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:FNR">
+      <path value="Patient.identifier" />
+      <sliceName value="FNR" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:FHN">
+      <path value="Patient.identifier" />
+      <sliceName value="FHN" />
+      <max value="0" />
+    </element>
+    <element id="Patient.identifier:DNR">
+      <path value="Patient.identifier" />
+      <sliceName value="DNR" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:HNR">
+      <path value="Patient.identifier" />
+      <sliceName value="HNR" />
+      <max value="0" />
+    </element>
+    <element id="Patient.identifier:PUF">
+      <path value="Patient.identifier" />
+      <sliceName value="PUF" />
+      <definition value="Needs definition" />
+      <comment value="Person uten fødselsnummer (PUF)" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.name">
+      <path value="Patient.name" />
+      <short value="Full name" />
+      <definition value="The full name of the deceased. Needed when reporting persons without a Norwegian national identification number, i.e. no FNR or DNR." />
+      <requirements value="The name of the deceased cannot be inferred without a Norwegian national identification number, and must therefore be provided manually. It is not required if the name of the deceased is unknown." />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.name.family">
+      <path value="Patient.name.family" />
+      <definition value="The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father." />
+    </element>
+    <element id="Patient.name.given">
+      <path value="Patient.name.given" />
+      <comment value="If only initials are recorded, they may be used in place of the full name parts. Initials may be separated into multiple given names but often aren't due to practical limitations.  This element is not called &quot;first name&quot; since given names do not always come first." />
+    </element>
+    <element id="Patient.name.prefix">
+      <path value="Patient.name.prefix" />
+      <max value="0" />
+    </element>
+    <element id="Patient.name.suffix">
+      <path value="Patient.name.suffix" />
+      <max value="0" />
+    </element>
+    <element id="Patient.name.period">
+      <path value="Patient.name.period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.gender">
+      <path value="Patient.gender" />
+      <requirements value="Required when the deceased does not have a Norwegian National identity number." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.deceased[x]">
+      <path value="Patient.deceased[x]" />
+      <short value="Indicates the date the individual deceased" />
+      <definition value="Indicates the date the individual deceased." />
+      <comment value="The exact time of death is only required when reporting cause of death, and is a separate field in the CauseOfDeathQuestionnaire." />
+      <requirements value="This profile's purpose is registering deceased patients, and the field is therefore mandatory." />
+      <min value="1" />
+      <type>
+        <code value="dateTime" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address">
+      <path value="Patient.address" />
+      <comment value="Only the country of residence is of interest." />
+      <requirements value="Required only when the deceased does not have a Norwegian National identity number (no FNR/DNR)." />
+      <max value="1" />
+    </element>
+    <element id="Patient.address.country">
+      <path value="Patient.address.country" />
+      <requirements value="Required when deceased does not have a Norwegian National identity number (no FNR/DNR)." />
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>

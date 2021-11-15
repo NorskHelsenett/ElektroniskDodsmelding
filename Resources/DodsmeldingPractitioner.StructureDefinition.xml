@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="b81571f6-bc92-41d1-b221-5d009e22559d" />
+  <meta>
+    <versionId value="6" />
+    <lastUpdated value="2021-09-13T08:30:05.805+00:00" />
+  </meta>
+  <url value="https://example.org/fhir/StructureDefinition/DodsmeldingPractitioner" />
+  <name value="DodsmeldingPractitioner" />
+  <status value="draft" />
+  <date value="2021-09-13T08:30:07.545186+00:00" />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Practitioner" />
+  <baseDefinition value="http://hl7.no/fhir/StructureDefinition/no-basis-Practitioner" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Practitioner.identifier">
+      <path value="Practitioner.identifier" />
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>

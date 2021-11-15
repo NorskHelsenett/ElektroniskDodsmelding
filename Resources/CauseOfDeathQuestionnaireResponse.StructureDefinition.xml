@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="95f2a653-444f-4354-a017-2962b790db91" />
+  <meta>
+    <versionId value="3" />
+    <lastUpdated value="2021-08-31T22:03:17.777+00:00" />
+  </meta>
+  <url value="https://example.org/fhir/StructureDefinition/CauseOfDeathQuestionnaireResponse" />
+  <name value="CauseOfDeathQuestionnaireResponse" />
+  <status value="draft" />
+  <date value="2021-08-31T22:03:16.8478992+00:00" />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="QuestionnaireResponse" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="QuestionnaireResponse.subject">
+      <path value="QuestionnaireResponse.subject" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.no/fhir/StructureDefinition/no-basis-Patient" />
+      </type>
+    </element>
+    <element id="QuestionnaireResponse.subject.reference">
+      <path value="QuestionnaireResponse.subject.reference" />
+      <max value="0" />
+    </element>
+    <element id="QuestionnaireResponse.subject.display">
+      <path value="QuestionnaireResponse.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="QuestionnaireResponse.encounter">
+      <path value="QuestionnaireResponse.encounter" />
+      <max value="0" />
+    </element>
+    <element id="QuestionnaireResponse.source">
+      <path value="QuestionnaireResponse.source" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/PractitionerRole" />
+      </type>
+    </element>
+    <element id="QuestionnaireResponse.source.reference">
+      <path value="QuestionnaireResponse.source.reference" />
+      <max value="0" />
+    </element>
+    <element id="QuestionnaireResponse.source.display">
+      <path value="QuestionnaireResponse.source.display" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>
