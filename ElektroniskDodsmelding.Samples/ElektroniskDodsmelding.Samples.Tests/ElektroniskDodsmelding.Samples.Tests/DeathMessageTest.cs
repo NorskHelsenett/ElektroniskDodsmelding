@@ -12,7 +12,7 @@ namespace ElektroniskDodsmelding.Samples.Tests
     /// Runs tests for reporting a person dead.
     /// </summary>
     /// <remarks>
-    ///  Requires valid jwtToken in the <see cref="TestJwt.ValidTokenWithDoctorRoleSecurityLevel4"/> from a HelseId client.
+    ///  Requires valid JSON Web Token in the <see cref="TestJwt.ValidTokenWithDoctorRoleSecurityLevel4"/> from a HelseId client.
     /// </remarks>
     public class DeathMessageTest
     {
@@ -43,6 +43,7 @@ namespace ElektroniskDodsmelding.Samples.Tests
 
             try
             {
+                // Currently the search will throw exception if the deceased don't exist as a patient already, and that's a good thing.
                 var searchPatientResult = await _fhirClient.SearchAsync<Patient>(new SearchParams("identifier", TestResources.ValidPatient.Identifier.First().Value));
                 var existingPatient = searchPatientResult?.Entry
                     .FirstOrDefault(p => p.Resource.TypeName == nameof(Patient))
