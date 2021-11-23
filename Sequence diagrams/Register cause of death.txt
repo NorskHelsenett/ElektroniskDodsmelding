@@ -4,6 +4,6 @@ participant EPJ
 participant Dødsmelding FHIR API
 
 EPJ->Dødsmelding FHIR API:Get Questionnaire
-EPJ<--Dødsmelding FHIR API:Return Questionnaire w/ questionnaireID
-EPJ->Dødsmelding FHIR API:Post QuestionnaireResponse referencing questionnaireID, patientID, practitionerRoleID
-EPJ<--Dødsmelding FHIR API:Return QuestionnaireResponse w/ questionnaireResponseID
+EPJ<--Dødsmelding FHIR API:Return Questionnaire w/ QuestionnaireID
+EPJ->Dødsmelding FHIR API:Post QuestionnaireResponse referencing QuestionnaireID, PatientID, PractitionerRoleID
+EPJ<--Dødsmelding FHIR API:Return QuestionnaireResponse w/ QuestionnaireResponseID

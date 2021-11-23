@@ -1,18 +1,18 @@
 ## Use cases
 
 ### Register death message
-Sending a death message is initiated by searching for a Patient based on its identifier (either FNR or DNR), which will return a Patient object. 
+Sending a death message is initiated by searching for a Patient based on its Identifier (either FNR or DNR), which will return a Bundle object containing matching Patients. 
 
 Then, if a PractitionerRoleID for the registering user is not available, a PractitionerRole object with contact information should be posted to receive one.
 
-Finally, the patient should be posted with a valid identifier, deceasedDate, and practitionerRoleID, which will send the information to the Norwegian tax office and return the Patient object including its PatientID.
+Finally, the patient should be posted with a valid Identifier, DeceasedDate, and PractitionerRoleID, which will send the information to the Norwegian tax office and return the Patient object including its PatientID.
 
 ![](../Pictures/register_death_message_sequence_diagram.png "Sequence diagram of registering a death message")
 
 ### Register cause of death
 Sending a cause of death message starts by calling a GET on the Questionnaire resource, which contains information about the questions and possible answers. 
 
-The QuestionnaireResponse should contain the questionnaireID, patientID, practitionerRoleID. Posting it will send the answers to FHI, and return the same object with a questionnaireResponseID.
+The QuestionnaireResponse should contain the QuestionnaireID, PatientID, PractitionerRoleID. Posting it will send the answers to FHI, and return the same object with a QuestionnaireResponseID.
 
 ![](../Pictures/register_cause_of_death_sequence_diagram.png "Sequence diagram of registering a cause of death message")
 
