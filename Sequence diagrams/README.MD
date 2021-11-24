@@ -1,0 +1,1 @@
+The sequence diagrams are text files rendered by https://sequencediagram.org/

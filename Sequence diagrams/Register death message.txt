@@ -1,0 +1,15 @@
+title Register death message
+
+participant EPJ
+
+participant Dødsmelding FHIR API
+
+
+EPJ->Dødsmelding FHIR API:Search for Patient based on Identifier (FNR/DNR)
+EPJ<--Dødsmelding FHIR API:Return Bundle containing matching Patients
+EPJ->Dødsmelding FHIR API:Post PractitionerRole
+EPJ<--Dødsmelding FHIR API:Return PractitionerRole w/ PractitionerRoleID\n
+
+EPJ->Dødsmelding FHIR API:Post Patient referencing PractitionerRoleID
+EPJ<--Dødsmelding FHIR API:Return Patient w/ PatientID
+
